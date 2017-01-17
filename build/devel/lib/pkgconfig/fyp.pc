@@ -1,0 +1,8 @@
+prefix=/home/karnix/catkin_ws/src/fyp/build/devel
+
+Name: fyp
+Description: Description of fyp
+Version: 0.0.1
+Cflags: 
+Libs: -L/home/karnix/catkin_ws/src/fyp/build/devel/lib 
+Requires: 
