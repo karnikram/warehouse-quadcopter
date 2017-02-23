@@ -8,7 +8,9 @@
 
 # modified environment variables
 export CMAKE_PREFIX_PATH="/home/karnix/catkin_ws/src/fyp/build/devel:$CMAKE_PREFIX_PATH"
+export LD_LIBRARY_PATH="/home/karnix/catkin_ws/src/fyp/build/devel/lib:$LD_LIBRARY_PATH"
 export PATH="/opt/ros/indigo/bin:/usr/lib/x86_64-linux-gnu/qt5/bin:/usr/bin:/usr/lib/x86_64-linux-gnu/qt5/bin:/usr/bin:/usr/local/cuda-7.0/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/karnix/android-studio/bin"
+export PKG_CONFIG_PATH="/home/karnix/catkin_ws/src/fyp/build/devel/lib/pkgconfig:$PKG_CONFIG_PATH"
 export PWD="/home/karnix/catkin_ws/src/fyp/build"
 export ROSLISP_PACKAGE_DIRECTORIES="/home/karnix/catkin_ws/src/fyp/build/devel/share/common-lisp:$ROSLISP_PACKAGE_DIRECTORIES"
 export ROS_PACKAGE_PATH="/home/karnix/catkin_ws/src/fyp:$ROS_PACKAGE_PATH"
