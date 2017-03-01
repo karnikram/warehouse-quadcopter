@@ -63,9 +63,11 @@ int main(int argc, char ** argv)
   float medianX, medianY;
   float compX, compY;
   float ofDispX, ofDispY;
-  float altitude = 1;
+  float altitude = 1.00;
   float dispX, dispY;
   int medianIdx, medianIdy;
+
+  double dx, dy;
 
   cv::Point2f currPoint, prevPoint;
   cv::Point2f currPos, prevPos;
@@ -155,6 +157,11 @@ int main(int argc, char ** argv)
       if(prevSrcGray.empty())
         srcGray.copyTo(prevSrcGray);
 
+      ros::spinOnce();
+      dx = attRoll - attRollPrev;
+      dy = attPitch - attPitchPrev;
+
+
       cv::calcOpticalFlowPyrLK(prevSrcGray, srcGray,
                                points[0], points[1],
                                status[0], err[0],
@@ -166,6 +173,10 @@ int main(int argc, char ** argv)
                                status[1], err[1],
                                cv::Size(31,31), 3,
                                termCrit, 0, 0.001);
+      if(!(dx >= 0.01 || dx <=-0.01 || dy >=0.01 || dy <=-0.01))
+      {
+	
+       
 
       for(i = 0, k = 0; i < points[1].size(); i++)
       {
@@ -179,7 +190,6 @@ int main(int argc, char ** argv)
 
         cv::circle(src, points[1][i], 3, cv::Scalar(255,0,0), -1, 8);
         cv::line(src, points[0][i], points[1][i],	cv::Scalar(0,0,255), 2, 8);
-
       }
 
       points[1].resize(k);
@@ -211,14 +221,48 @@ int main(int argc, char ** argv)
         medianX = (float) diffX.at<int>(medianIdx) / 10000;
         medianY = (float) diffY.at<int>(medianIdy) / 10000;
 
-        compX = (attRoll - attRollPrev) * (NO_OF_COLUMNS) / (FOV);
-        compY = (attPitch - attPitchPrev) * (NO_OF_ROWS) / (FOV);
+        //ros::spinOnce();
 
-        ofDispX = medianX + compX;
+        
+/*
+        if((dx < 0.015 && dx > 0.003) || (dx > -0.015 && dx < 0.003))
+        compX = dx * 165;
+
+        else if(dx > 0.015 && dx < 0.025)
+        compX = dx * 105 + 0.8;
+
+        else if(dx > 0.025)
+        compX = dx * 30 + 1.4;
+
+        else if(dx > -0.025 && dx < -0.015)
+        compX = dx * 105 - 0.8;
+
+        else
+        compX = 30*dx - 1.4;
+
+
+        //compX = (attRoll - attRollPrev) * (NO_OF_COLUMNS) / (FOV);
+        //compY = (attPitch - attPitchPrev) * (NO_OF_ROWS) / (FOV);
+
+        std::cout << "Roll: " << roundf(((attRoll - attRollPrev)*180/3.14)*100)/100 << std::endl;
+        std::cout << "Pitch: " << roundf(((attPitch - attPitchPrev)*180/3.14)*100)/100 << std::endl;
+        std::cout << "medianX: " << roundf((medianX*100))/100<< std::endl;
+        std::cout << "medianY: " << roundf(medianY*100)/100 << std::endl;
+        std::cout << "compX: " << roundf(compX*100)/100 << std::endl;
+        std::cout << "compY: " << roundf(compY*100)/100 << "\n\n\n";
+
+*/
+        compX = dx * (NO_OF_COLUMNS) / (FOV);
+        compY = dy * (NO_OF_ROWS) / (FOV);
+
+        //ROS_WARN_STREAM("Roll: " << roundf((attRoll - attRollPrev)*100)/100 << "  medianX: "<<roundf(medianX*100)/100 << "  compX: " << roundf(compX*100)/100);
+        //ROS_WARN_STREAM("medianX: " << roundf(medianX*100)/100);
+
+        ofDispX = medianX - compX;
         ofDispY = medianY + compY;
 
         dispX = (2 * altitude * tan(FOV / 2) * ofDispX) / (NO_OF_COLUMNS);
-        dispY = (2 * altitude * tan(FOV / 2) * ofDispY) / (NO_OF_ROWS);
+        dispY = (-2 * altitude * tan(FOV / 2) * ofDispY) / (NO_OF_ROWS);
 
         currPos.x = prevPos.x + roundf(dispX * 100) / 100;
         currPos.y = prevPos.y + roundf(dispY * 100) / 100;
@@ -252,10 +296,10 @@ int main(int argc, char ** argv)
 
         pubPose.publish(visionPose);
 
-        //std::cout << dispX << "\t" << dispY << std::endl;
       }
 
     }
+}
 
     cv::imshow("Tracking", src);
 
@@ -273,7 +317,6 @@ int main(int argc, char ** argv)
 
     prevPos = currPos;
 
-    ros::spinOnce();
   }
 
   return 0;
