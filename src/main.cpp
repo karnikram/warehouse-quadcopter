@@ -1,18 +1,21 @@
 #include <ros/ros.h>
 #include "opencv2/opencv.hpp"
 #include "opencv2/imgproc/imgproc.hpp"
+#include <std_msgs/Int16.h>
 #include <geometry_msgs/TwistStamped.h>
 #include <geometry_msgs/PoseStamped.h>
 #include <visualization_msgs/Marker.h>
 
 #include <Eigen/Geometry>
 #include <math.h>
+#include <cmath>
 
 #define NO_OF_COLUMNS 320
 #define NO_OF_ROWS 240
 #define FOV 56*3.14/180
 
 double attRoll, attRollPrev, attPitch, attPitchPrev, attYaw, attYawPrev;
+float altitude;
 Eigen::Quaternionf eQuaternion;
 
 void getAngles(const geometry_msgs::TwistStamped &eulerData)
@@ -30,12 +33,18 @@ void getAngles(const geometry_msgs::TwistStamped &eulerData)
 
 }
 
+void getAltitude(const std_msgs::Int16 &range)
+{
+  altitude = range;
+  ROS_INFO_STREAM(altitude);
+}
+
 std::vector<cv::Point2f> findFeatures(cv::Mat &src, cv::Mat &srcGray)
 {
   std::vector<cv::Point2f> corners;
-  int maxCorners = 500;
+  int maxCorners = 200;
   double qualityLevel = 0.01;
-  double minDistance = 10;
+  double minDistance = 20;
   int blockSize = 3;
   bool useHarrisDetector = false;
   double k = 0.04;
@@ -43,7 +52,7 @@ std::vector<cv::Point2f> findFeatures(cv::Mat &src, cv::Mat &srcGray)
   cv::TermCriteria termCrit(CV_TERMCRIT_EPS | CV_TERMCRIT_ITER, 20, 0.03);
 
   cv::goodFeaturesToTrack(srcGray, corners, maxCorners,
-                          qualityLevel, minDistance,	 cv::Mat(),
+                          qualityLevel, minDistance, cv::Mat(),
                           blockSize, useHarrisDetector, k);
 
   cv::cornerSubPix(srcGray, corners,
@@ -61,9 +70,9 @@ int main(int argc, char ** argv)
   cv::Mat diffX, diffY, sortX, sortY;
 
   float medianX, medianY;
+  float medianXPrev, medianYPrev;
   float compX, compY;
   float ofDispX, ofDispY;
-  float altitude = 1.00;
   float dispX, dispY;
   int medianIdx, medianIdy;
 
@@ -79,7 +88,7 @@ int main(int argc, char ** argv)
 
   int markerId = 0;
 
-  cv::namedWindow("Tracking");
+  //cv::namedWindow("Tracking");
 
   if(!cap.isOpened())
   {
@@ -94,8 +103,11 @@ int main(int argc, char ** argv)
   ros::init(argc, argv, "fyp_node");
   ros::NodeHandle nh;
 
-  ros::Subscriber sub = nh.subscribe("/flytpod/mavros/imu/data_euler",
-               1000, &getAngles);
+  ros::Subscriber anglesSub = nh.subscribe("/flytpod/mavros/imu/data_euler",
+                                           1000, &getAngles);
+
+  ros::Subscriber rangeSub = nh.subscribe("ultrasound/distance",
+                                          1000, &getAltitude);
 
   ros::Publisher pubPose = nh.advertise<geometry_msgs::PoseStamped>
       ("/flytpod/mavros/vision_pose/pose", 1000);
@@ -131,7 +143,7 @@ int main(int argc, char ** argv)
 
   int i,k;
 
-  while(1)
+  while(ros::ok())
   {
     cap.read(src);
     cv::cvtColor(src, srcGray, CV_BGR2GRAY);
@@ -158,38 +170,35 @@ int main(int argc, char ** argv)
         srcGray.copyTo(prevSrcGray);
 
       ros::spinOnce();
+
       dx = attRoll - attRollPrev;
       dy = attPitch - attPitchPrev;
 
-
-      cv::calcOpticalFlowPyrLK(prevSrcGray, srcGray,
+      //if(!(dx >= 0.005 || dx <=-0.005 || dy >=0.005 || dy <=-0.005))
+     // {
+         cv::calcOpticalFlowPyrLK(prevSrcGray, srcGray,
                                points[0], points[1],
                                status[0], err[0],
                                cv::Size(31,31), 3,
                                termCrit, 0, 0.001);
 
-      cv::calcOpticalFlowPyrLK(prevSrcGray, srcGray,
+         cv::calcOpticalFlowPyrLK(prevSrcGray, srcGray,
                                points[1], points[2],
                                status[1], err[1],
                                cv::Size(31,31), 3,
                                termCrit, 0, 0.001);
-      if(!(dx >= 0.01 || dx <=-0.01 || dy >=0.01 || dy <=-0.01))
-      {
-	
-       
 
-      for(i = 0, k = 0; i < points[1].size(); i++)
-      {
-        if(!(status[0][i] || status[1][i]))
-          continue;
+         for(i = 0, k = 0; i < points[1].size(); i++)
+         {
+           if(!(status[0][i] || status[1][i]))
+             continue;
+           points[1][k] = points[1][i];
+           points[0][k] = points[0][i];
 
-        points[1][k] = points[1][i];
-        points[0][k] = points[0][i];
+           k++;
 
-        k++;
-
-        cv::circle(src, points[1][i], 3, cv::Scalar(255,0,0), -1, 8);
-        cv::line(src, points[0][i], points[1][i],	cv::Scalar(0,0,255), 2, 8);
+        //cv::circle(src, points[1][i], 3, cv::Scalar(255,0,0), -1, 8);
+        //cv::line(src, points[0][i], points[1][i], cv::Scalar(0,0,255), 2, 8);
       }
 
       points[1].resize(k);
@@ -255,20 +264,23 @@ int main(int argc, char ** argv)
         compX = dx * (NO_OF_COLUMNS) / (FOV);
         compY = dy * (NO_OF_ROWS) / (FOV);
 
-        //ROS_WARN_STREAM("Roll: " << roundf((attRoll - attRollPrev)*100)/100 << "  medianX: "<<roundf(medianX*100)/100 << "  compX: " << roundf(compX*100)/100);
+        //ROS_WARN_STREAM("Roll: " << roundf((attRoll*10000))/10000 << "dRoll: " << roundf((attRoll - attRollPrev)*10000)/10000 << "  medianX: "<<roundf(medianX*10000)/10000 << "  compX: " << roundf(compX*10000)/10000);
         //ROS_WARN_STREAM("medianX: " << roundf(medianX*100)/100);
 
-        ofDispX = medianX - compX;
-        ofDispY = medianY + compY;
+        ofDispX = medianX - 2.0 * compX;
+        ofDispY = medianY - compY;
 
         dispX = (2 * altitude * tan(FOV / 2) * ofDispX) / (NO_OF_COLUMNS);
-        dispY = (-2 * altitude * tan(FOV / 2) * ofDispY) / (NO_OF_ROWS);
+        dispY = (2 * altitude * tan(FOV / 2) * ofDispY) / (NO_OF_ROWS);
 
-        currPos.x = prevPos.x + roundf(dispX * 100) / 100;
-        currPos.y = prevPos.y + roundf(dispY * 100) / 100;
+	if(abs(medianX - medianXPrev) < 4.5 && abs(medianY - medianYPrev) < 4.5)
+	{
+	  currPos.x = prevPos.x + dispX;
+	  currPos.y = prevPos.y + dispY;
+	}
 
-        visionPose.pose.position.x = roundf(currPos.x * 100) / 100;
-        visionPose.pose.position.y = roundf(currPos.y * 100) / 100;
+        visionPose.pose.position.x = currPos.x;
+        visionPose.pose.position.y = - currPos.y;
         visionPose.pose.position.z = altitude;
 
         visionPose.pose.orientation.x = eQuaternion.x();
@@ -294,20 +306,24 @@ int main(int argc, char ** argv)
 
         pubMarker.publish(positionMarker);
 
-        pubPose.publish(visionPose);
+        //pubPose.publish(visionPose);
 
       }
 
     }
-}
+//}
 
-    cv::imshow("Tracking", src);
+    //cv::imshow("Tracking", src);
 
-    if(cv::waitKey(10) == 27)
-    {
-      break;
-    }
+    //if(cv::waitKey(5) == 27)
+    //{
+     // break;
+   // }
+	
+    //cv::waitKey(5);
 
+    medianXPrev = medianX;
+    medianYPrev = medianY;
     points[0] = points[1];
     cv::swap(prevSrcGray, srcGray);
 
@@ -318,6 +334,5 @@ int main(int argc, char ** argv)
     prevPos = currPos;
 
   }
-
   return 0;
 }
