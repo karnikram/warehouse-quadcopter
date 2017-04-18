@@ -1,10 +1,11 @@
 #include <ros/ros.h>
+#include <signal.h>
 #include "opencv2/opencv.hpp"
 #include "opencv2/imgproc/imgproc.hpp"
-#include <std_msgs/Int16.h>
+#include <std_msgs/Float32.h>
 #include <geometry_msgs/TwistStamped.h>
 #include <geometry_msgs/PoseStamped.h>
-#include <visualization_msgs/Marker.h>
+#include <mavros_msgs/ParamSet.h>
 
 #include <Eigen/Geometry>
 #include <math.h>
@@ -15,8 +16,41 @@
 #define FOV 56*3.14/180
 
 double attRoll, attRollPrev, attPitch, attPitchPrev, attYaw, attYawPrev;
-float altitude;
+bool sonarInit;
+float altitude, prevAltitude;
 Eigen::Quaternionf eQuaternion;
+
+void mySigintHandler(int sig)
+{
+
+  mavros_msgs::ParamSet::Request req;
+  mavros_msgs::ParamSet::Response resp;
+
+  ros::NodeHandle nh;
+
+  ros::ServiceClient ekf2Client = nh.serviceClient<mavros_msgs::ParamSet>
+      ("/flytpod/mavros/param/set");
+  req.param_id = "EKF2_AID_MASK";
+  req.value.integer = 1;
+  req.value.real = 1.0;
+
+  while(!ekf2Client.call(req,resp))
+  {
+    ROS_WARN_STREAM("Still trying to reset EKF2 AID param!");
+  }
+
+  req.param_id = "EKF2_HGT_MODE";
+  req.value.integer = 0;
+  req.value.real = 0.0;
+
+  while(!ekf2Client.call(req,resp))
+  {
+    ROS_WARN_STREAM("Still trying to reset EKF2 HGT param!");
+  }
+
+
+  ros::shutdown();
+}
 
 void getAngles(const geometry_msgs::TwistStamped &eulerData)
 {
@@ -27,15 +61,20 @@ void getAngles(const geometry_msgs::TwistStamped &eulerData)
   eQuaternion = Eigen::AngleAxisf(attRoll,Eigen::Vector3f::UnitX())
       * Eigen::AngleAxisf(attPitch, Eigen::Vector3f::UnitY())
       * Eigen::AngleAxisf(attYaw, Eigen::Vector3f::UnitZ());
-
-  //ROS_INFO_STREAM_ONCE("Subsribed to Euler Data!");
- // ROS_INFO_STREAM_THROTTLE(1, attRoll<<"\t"<<attPitch<<"\t"<<attYaw);
-
 }
 
-void getAltitude(const std_msgs::Int16 &range)
+void getAltitude(const std_msgs::Float32 &range)
 {
-  altitude = range;
+  if(!prevAltitude)
+    prevAltitude = range.data;
+
+  if(range.data == 0)
+    altitude = prevAltitude;
+
+  else
+    altitude = range.data;
+
+  sonarInit = true;
   ROS_INFO_STREAM(altitude);
 }
 
@@ -88,7 +127,7 @@ int main(int argc, char ** argv)
 
   int markerId = 0;
 
-  //cv::namedWindow("Tracking");
+ // cv::namedWindow("Tracking");
 
   if(!cap.isOpened())
   {
@@ -112,40 +151,51 @@ int main(int argc, char ** argv)
   ros::Publisher pubPose = nh.advertise<geometry_msgs::PoseStamped>
       ("/flytpod/mavros/vision_pose/pose", 1000);
 
-  ros::Publisher pubMarker = nh.advertise<visualization_msgs::Marker>
-      ("visualization_marker", 0);
-
   geometry_msgs::PoseStamped visionPose;
-
-  visualization_msgs::Marker positionMarker;
 
   geometry_msgs::Point point;
 
+  mavros_msgs::ParamSet::Request req;
+  mavros_msgs::ParamSet::Response resp;
+
+  ros::ServiceClient ekf2Client = nh.serviceClient<mavros_msgs::ParamSet>
+      ("/flytpod/mavros/param/set");
+
+  req.param_id = "EKF2_AID_MASK";
+  req.value.integer = 8;
+  req.value.real = 8.0;
+
+  while(!ekf2Client.call(req,resp))
+  {
+    ROS_WARN_STREAM("Still trying to set EKF2 AID param!");
+  }
+
+  req.param_id = "EKF2_HGT_MODE";
+  req.value.integer = 0;
+  req.value.real = 0.0;
+
+  while(!ekf2Client.call(req,resp))
+  {
+    ROS_WARN_STREAM("Still trying to set EKF2 HGT param!");
+  }
+
+  signal(SIGINT, mySigintHandler);
+
   visionPose.header.frame_id = "map";
 
-  positionMarker.header.frame_id="map";
-  positionMarker.ns = "trajectory";
-  positionMarker.header.stamp = ros::Time();
-
-  positionMarker.type = visualization_msgs::Marker::SPHERE_LIST;
-  positionMarker.action = visualization_msgs::Marker::ADD;
-
-  positionMarker.scale.x = 0.10;
-  positionMarker.scale.y = 0.10;
-  positionMarker.scale.z = 0.10;
-
-  positionMarker.color.a = 1.0;
-  positionMarker.color.r = 1.0;
-  positionMarker.color.g = 0.0;
-  positionMarker.color.b = 0.0;
-
-  positionMarker.points.reserve(1000);
-
   int i,k;
+
+  cv::Rect rect(110, 70, 100, 100);
 
   while(ros::ok())
   {
     cap.read(src);
+
+    //cv::transpose(src, src);
+    //cv::flip(src, src, 0);
+
+    //src = src(rect);
+
     cv::cvtColor(src, srcGray, CV_BGR2GRAY);
     init_count++;
 
@@ -196,9 +246,9 @@ int main(int argc, char ** argv)
            points[0][k] = points[0][i];
 
            k++;
-
-        //cv::circle(src, points[1][i], 3, cv::Scalar(255,0,0), -1, 8);
-        //cv::line(src, points[0][i], points[1][i], cv::Scalar(0,0,255), 2, 8);
+		
+           cv::circle(src, points[1][i], 3, cv::Scalar(255,0,0), -1, 8);
+           cv::line(src, points[0][i], points[1][i], cv::Scalar(0,0,255), 2, 8);
       }
 
       points[1].resize(k);
@@ -230,57 +280,23 @@ int main(int argc, char ** argv)
         medianX = (float) diffX.at<int>(medianIdx) / 10000;
         medianY = (float) diffY.at<int>(medianIdy) / 10000;
 
-        //ros::spinOnce();
-
-        
-/*
-        if((dx < 0.015 && dx > 0.003) || (dx > -0.015 && dx < 0.003))
-        compX = dx * 165;
-
-        else if(dx > 0.015 && dx < 0.025)
-        compX = dx * 105 + 0.8;
-
-        else if(dx > 0.025)
-        compX = dx * 30 + 1.4;
-
-        else if(dx > -0.025 && dx < -0.015)
-        compX = dx * 105 - 0.8;
-
-        else
-        compX = 30*dx - 1.4;
-
-
-        //compX = (attRoll - attRollPrev) * (NO_OF_COLUMNS) / (FOV);
-        //compY = (attPitch - attPitchPrev) * (NO_OF_ROWS) / (FOV);
-
-        std::cout << "Roll: " << roundf(((attRoll - attRollPrev)*180/3.14)*100)/100 << std::endl;
-        std::cout << "Pitch: " << roundf(((attPitch - attPitchPrev)*180/3.14)*100)/100 << std::endl;
-        std::cout << "medianX: " << roundf((medianX*100))/100<< std::endl;
-        std::cout << "medianY: " << roundf(medianY*100)/100 << std::endl;
-        std::cout << "compX: " << roundf(compX*100)/100 << std::endl;
-        std::cout << "compY: " << roundf(compY*100)/100 << "\n\n\n";
-
-*/
         compX = dx * (NO_OF_COLUMNS) / (FOV);
         compY = dy * (NO_OF_ROWS) / (FOV);
 
-        //ROS_WARN_STREAM("Roll: " << roundf((attRoll*10000))/10000 << "dRoll: " << roundf((attRoll - attRollPrev)*10000)/10000 << "  medianX: "<<roundf(medianX*10000)/10000 << "  compX: " << roundf(compX*10000)/10000);
-        //ROS_WARN_STREAM("medianX: " << roundf(medianX*100)/100);
-
-        ofDispX = medianX - 2.0 * compX;
+        ofDispX = medianX - 2.0* compX;
         ofDispY = medianY - compY;
 
         dispX = (2 * altitude * tan(FOV / 2) * ofDispX) / (NO_OF_COLUMNS);
         dispY = (2 * altitude * tan(FOV / 2) * ofDispY) / (NO_OF_ROWS);
 
-	if(abs(medianX - medianXPrev) < 4.5 && abs(medianY - medianYPrev) < 4.5)
-	{
-	  currPos.x = prevPos.x + dispX;
-	  currPos.y = prevPos.y + dispY;
-	}
+        if(abs(medianX - medianXPrev) < 4.5 && abs(medianY - medianYPrev) < 4.5)
+        {
+          currPos.x = prevPos.x + dispX;
+          currPos.y = prevPos.y + dispY;
+        }
 
-        visionPose.pose.position.x = currPos.x;
-        visionPose.pose.position.y = - currPos.y;
+        visionPose.pose.position.x = - currPos.x;
+        visionPose.pose.position.y =  currPos.y;
         visionPose.pose.position.z = altitude;
 
         visionPose.pose.orientation.x = eQuaternion.x();
@@ -288,25 +304,17 @@ int main(int argc, char ** argv)
         visionPose.pose.orientation.z = eQuaternion.z();
         visionPose.pose.orientation.w = eQuaternion.w();
 
+        visionPose.header.stamp = ros::Time::now();
+
         point.x = visionPose.pose.position.x;
         point.y = visionPose.pose.position.y;
         point.z = visionPose.pose.position.z;
-
-        if(positionMarker.points.size() < 1000)
+	
+        if(sonarInit)
         {
-          positionMarker.points.push_back(point);
+          ROS_INFO_STREAM_ONCE("calculated");
+          pubPose.publish(visionPose);
         }
-
-        else
-        {
-          positionMarker.points[markerId] = point;
-        }
-
-        markerId = ++markerId % 1000;
-
-        pubMarker.publish(positionMarker);
-
-        //pubPose.publish(visionPose);
 
       }
 
@@ -315,10 +323,10 @@ int main(int argc, char ** argv)
 
     //cv::imshow("Tracking", src);
 
-    //if(cv::waitKey(5) == 27)
-    //{
-     // break;
-   // }
+  // if(cv::waitKey(5) == 27)
+  //  {
+ //    break;
+  //  }
 	
     //cv::waitKey(5);
 
@@ -332,7 +340,9 @@ int main(int argc, char ** argv)
     attYawPrev = attYaw;
 
     prevPos = currPos;
+    prevAltitude = altitude;
 
   }
-  return 0;
+
+    return 0;
 }

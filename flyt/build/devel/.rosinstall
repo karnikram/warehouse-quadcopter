@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/flytpod/catkin_ws/src/fyp/flyt/build/devel/setup.sh

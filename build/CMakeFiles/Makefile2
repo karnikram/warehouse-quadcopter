@@ -53,6 +53,41 @@ CMAKE_SOURCE_DIR = /home/karnix/catkin_ws/src/fyp
 CMAKE_BINARY_DIR = /home/karnix/catkin_ws/src/fyp/build
 
 #=============================================================================
+# Target rules for target CMakeFiles/aruco_tracker.dir
+
+# All Build rule for target.
+CMakeFiles/aruco_tracker.dir/all:
+	$(MAKE) -f CMakeFiles/aruco_tracker.dir/build.make CMakeFiles/aruco_tracker.dir/depend
+	$(MAKE) -f CMakeFiles/aruco_tracker.dir/build.make CMakeFiles/aruco_tracker.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/karnix/catkin_ws/src/fyp/build/CMakeFiles  1
+	@echo "Built target aruco_tracker"
+.PHONY : CMakeFiles/aruco_tracker.dir/all
+
+# Include target in all.
+all: CMakeFiles/aruco_tracker.dir/all
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/aruco_tracker.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/karnix/catkin_ws/src/fyp/build/CMakeFiles 1
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/aruco_tracker.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/karnix/catkin_ws/src/fyp/build/CMakeFiles 0
+.PHONY : CMakeFiles/aruco_tracker.dir/rule
+
+# Convenience name for target.
+aruco_tracker: CMakeFiles/aruco_tracker.dir/rule
+.PHONY : aruco_tracker
+
+# clean rule for target.
+CMakeFiles/aruco_tracker.dir/clean:
+	$(MAKE) -f CMakeFiles/aruco_tracker.dir/build.make CMakeFiles/aruco_tracker.dir/clean
+.PHONY : CMakeFiles/aruco_tracker.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/aruco_tracker.dir/clean
+.PHONY : clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/clean_test_results.dir
 
 # All Build rule for target.
@@ -152,7 +187,7 @@ clean: CMakeFiles/doxygen.dir/clean
 CMakeFiles/fyp_node.dir/all:
 	$(MAKE) -f CMakeFiles/fyp_node.dir/build.make CMakeFiles/fyp_node.dir/depend
 	$(MAKE) -f CMakeFiles/fyp_node.dir/build.make CMakeFiles/fyp_node.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/karnix/catkin_ws/src/fyp/build/CMakeFiles  1
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/karnix/catkin_ws/src/fyp/build/CMakeFiles  2
 	@echo "Built target fyp_node"
 .PHONY : CMakeFiles/fyp_node.dir/all
 
@@ -178,6 +213,134 @@ CMakeFiles/fyp_node.dir/clean:
 
 # clean rule for target.
 clean: CMakeFiles/fyp_node.dir/clean
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/geometry_msgs_generate_messages_cpp.dir
+
+# All Build rule for target.
+CMakeFiles/geometry_msgs_generate_messages_cpp.dir/all:
+	$(MAKE) -f CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build.make CMakeFiles/geometry_msgs_generate_messages_cpp.dir/depend
+	$(MAKE) -f CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build.make CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/karnix/catkin_ws/src/fyp/build/CMakeFiles 
+	@echo "Built target geometry_msgs_generate_messages_cpp"
+.PHONY : CMakeFiles/geometry_msgs_generate_messages_cpp.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/karnix/catkin_ws/src/fyp/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/geometry_msgs_generate_messages_cpp.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/karnix/catkin_ws/src/fyp/build/CMakeFiles 0
+.PHONY : CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+geometry_msgs_generate_messages_cpp: CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
+.PHONY : geometry_msgs_generate_messages_cpp
+
+# clean rule for target.
+CMakeFiles/geometry_msgs_generate_messages_cpp.dir/clean:
+	$(MAKE) -f CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build.make CMakeFiles/geometry_msgs_generate_messages_cpp.dir/clean
+.PHONY : CMakeFiles/geometry_msgs_generate_messages_cpp.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/geometry_msgs_generate_messages_cpp.dir/clean
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/geometry_msgs_generate_messages_lisp.dir
+
+# All Build rule for target.
+CMakeFiles/geometry_msgs_generate_messages_lisp.dir/all:
+	$(MAKE) -f CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build.make CMakeFiles/geometry_msgs_generate_messages_lisp.dir/depend
+	$(MAKE) -f CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build.make CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/karnix/catkin_ws/src/fyp/build/CMakeFiles 
+	@echo "Built target geometry_msgs_generate_messages_lisp"
+.PHONY : CMakeFiles/geometry_msgs_generate_messages_lisp.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/karnix/catkin_ws/src/fyp/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/geometry_msgs_generate_messages_lisp.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/karnix/catkin_ws/src/fyp/build/CMakeFiles 0
+.PHONY : CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+geometry_msgs_generate_messages_lisp: CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
+.PHONY : geometry_msgs_generate_messages_lisp
+
+# clean rule for target.
+CMakeFiles/geometry_msgs_generate_messages_lisp.dir/clean:
+	$(MAKE) -f CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build.make CMakeFiles/geometry_msgs_generate_messages_lisp.dir/clean
+.PHONY : CMakeFiles/geometry_msgs_generate_messages_lisp.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/geometry_msgs_generate_messages_lisp.dir/clean
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/geometry_msgs_generate_messages_py.dir
+
+# All Build rule for target.
+CMakeFiles/geometry_msgs_generate_messages_py.dir/all:
+	$(MAKE) -f CMakeFiles/geometry_msgs_generate_messages_py.dir/build.make CMakeFiles/geometry_msgs_generate_messages_py.dir/depend
+	$(MAKE) -f CMakeFiles/geometry_msgs_generate_messages_py.dir/build.make CMakeFiles/geometry_msgs_generate_messages_py.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/karnix/catkin_ws/src/fyp/build/CMakeFiles 
+	@echo "Built target geometry_msgs_generate_messages_py"
+.PHONY : CMakeFiles/geometry_msgs_generate_messages_py.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/geometry_msgs_generate_messages_py.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/karnix/catkin_ws/src/fyp/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/geometry_msgs_generate_messages_py.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/karnix/catkin_ws/src/fyp/build/CMakeFiles 0
+.PHONY : CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
+
+# Convenience name for target.
+geometry_msgs_generate_messages_py: CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
+.PHONY : geometry_msgs_generate_messages_py
+
+# clean rule for target.
+CMakeFiles/geometry_msgs_generate_messages_py.dir/clean:
+	$(MAKE) -f CMakeFiles/geometry_msgs_generate_messages_py.dir/build.make CMakeFiles/geometry_msgs_generate_messages_py.dir/clean
+.PHONY : CMakeFiles/geometry_msgs_generate_messages_py.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/geometry_msgs_generate_messages_py.dir/clean
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/position_visualizer.dir
+
+# All Build rule for target.
+CMakeFiles/position_visualizer.dir/all:
+	$(MAKE) -f CMakeFiles/position_visualizer.dir/build.make CMakeFiles/position_visualizer.dir/depend
+	$(MAKE) -f CMakeFiles/position_visualizer.dir/build.make CMakeFiles/position_visualizer.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/karnix/catkin_ws/src/fyp/build/CMakeFiles  5
+	@echo "Built target position_visualizer"
+.PHONY : CMakeFiles/position_visualizer.dir/all
+
+# Include target in all.
+all: CMakeFiles/position_visualizer.dir/all
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/position_visualizer.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/karnix/catkin_ws/src/fyp/build/CMakeFiles 1
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/position_visualizer.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/karnix/catkin_ws/src/fyp/build/CMakeFiles 0
+.PHONY : CMakeFiles/position_visualizer.dir/rule
+
+# Convenience name for target.
+position_visualizer: CMakeFiles/position_visualizer.dir/rule
+.PHONY : position_visualizer
+
+# clean rule for target.
+CMakeFiles/position_visualizer.dir/clean:
+	$(MAKE) -f CMakeFiles/position_visualizer.dir/build.make CMakeFiles/position_visualizer.dir/clean
+.PHONY : CMakeFiles/position_visualizer.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/position_visualizer.dir/clean
 .PHONY : clean
 
 #=============================================================================
@@ -398,6 +561,99 @@ clean: CMakeFiles/run_tests.dir/clean
 .PHONY : clean
 
 #=============================================================================
+# Target rules for target CMakeFiles/sensor_msgs_generate_messages_cpp.dir
+
+# All Build rule for target.
+CMakeFiles/sensor_msgs_generate_messages_cpp.dir/all:
+	$(MAKE) -f CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build.make CMakeFiles/sensor_msgs_generate_messages_cpp.dir/depend
+	$(MAKE) -f CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build.make CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/karnix/catkin_ws/src/fyp/build/CMakeFiles 
+	@echo "Built target sensor_msgs_generate_messages_cpp"
+.PHONY : CMakeFiles/sensor_msgs_generate_messages_cpp.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/karnix/catkin_ws/src/fyp/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/sensor_msgs_generate_messages_cpp.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/karnix/catkin_ws/src/fyp/build/CMakeFiles 0
+.PHONY : CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+sensor_msgs_generate_messages_cpp: CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
+.PHONY : sensor_msgs_generate_messages_cpp
+
+# clean rule for target.
+CMakeFiles/sensor_msgs_generate_messages_cpp.dir/clean:
+	$(MAKE) -f CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build.make CMakeFiles/sensor_msgs_generate_messages_cpp.dir/clean
+.PHONY : CMakeFiles/sensor_msgs_generate_messages_cpp.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/sensor_msgs_generate_messages_cpp.dir/clean
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/sensor_msgs_generate_messages_lisp.dir
+
+# All Build rule for target.
+CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all:
+	$(MAKE) -f CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build.make CMakeFiles/sensor_msgs_generate_messages_lisp.dir/depend
+	$(MAKE) -f CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build.make CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/karnix/catkin_ws/src/fyp/build/CMakeFiles 
+	@echo "Built target sensor_msgs_generate_messages_lisp"
+.PHONY : CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/karnix/catkin_ws/src/fyp/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/karnix/catkin_ws/src/fyp/build/CMakeFiles 0
+.PHONY : CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+sensor_msgs_generate_messages_lisp: CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
+.PHONY : sensor_msgs_generate_messages_lisp
+
+# clean rule for target.
+CMakeFiles/sensor_msgs_generate_messages_lisp.dir/clean:
+	$(MAKE) -f CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build.make CMakeFiles/sensor_msgs_generate_messages_lisp.dir/clean
+.PHONY : CMakeFiles/sensor_msgs_generate_messages_lisp.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/sensor_msgs_generate_messages_lisp.dir/clean
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/sensor_msgs_generate_messages_py.dir
+
+# All Build rule for target.
+CMakeFiles/sensor_msgs_generate_messages_py.dir/all:
+	$(MAKE) -f CMakeFiles/sensor_msgs_generate_messages_py.dir/build.make CMakeFiles/sensor_msgs_generate_messages_py.dir/depend
+	$(MAKE) -f CMakeFiles/sensor_msgs_generate_messages_py.dir/build.make CMakeFiles/sensor_msgs_generate_messages_py.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/karnix/catkin_ws/src/fyp/build/CMakeFiles 
+	@echo "Built target sensor_msgs_generate_messages_py"
+.PHONY : CMakeFiles/sensor_msgs_generate_messages_py.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/sensor_msgs_generate_messages_py.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/karnix/catkin_ws/src/fyp/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/sensor_msgs_generate_messages_py.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/karnix/catkin_ws/src/fyp/build/CMakeFiles 0
+.PHONY : CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
+
+# Convenience name for target.
+sensor_msgs_generate_messages_py: CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
+.PHONY : sensor_msgs_generate_messages_py
+
+# clean rule for target.
+CMakeFiles/sensor_msgs_generate_messages_py.dir/clean:
+	$(MAKE) -f CMakeFiles/sensor_msgs_generate_messages_py.dir/build.make CMakeFiles/sensor_msgs_generate_messages_py.dir/clean
+.PHONY : CMakeFiles/sensor_msgs_generate_messages_py.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/sensor_msgs_generate_messages_py.dir/clean
+.PHONY : clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/std_msgs_generate_messages_cpp.dir
 
 # All Build rule for target.
@@ -544,7 +800,7 @@ gtest/preinstall:
 gtest/CMakeFiles/gtest.dir/all:
 	$(MAKE) -f gtest/CMakeFiles/gtest.dir/build.make gtest/CMakeFiles/gtest.dir/depend
 	$(MAKE) -f gtest/CMakeFiles/gtest.dir/build.make gtest/CMakeFiles/gtest.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/karnix/catkin_ws/src/fyp/build/CMakeFiles  2
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/karnix/catkin_ws/src/fyp/build/CMakeFiles  3
 	@echo "Built target gtest"
 .PHONY : gtest/CMakeFiles/gtest.dir/all
 
@@ -575,7 +831,7 @@ clean: gtest/CMakeFiles/gtest.dir/clean
 gtest/CMakeFiles/gtest_main.dir/all: gtest/CMakeFiles/gtest.dir/all
 	$(MAKE) -f gtest/CMakeFiles/gtest_main.dir/build.make gtest/CMakeFiles/gtest_main.dir/depend
 	$(MAKE) -f gtest/CMakeFiles/gtest_main.dir/build.make gtest/CMakeFiles/gtest_main.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/karnix/catkin_ws/src/fyp/build/CMakeFiles  3
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/karnix/catkin_ws/src/fyp/build/CMakeFiles  4
 	@echo "Built target gtest_main"
 .PHONY : gtest/CMakeFiles/gtest_main.dir/all
 

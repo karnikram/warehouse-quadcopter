@@ -150,6 +150,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named aruco_tracker
+
+# Build rule for target.
+aruco_tracker: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 aruco_tracker
+.PHONY : aruco_tracker
+
+# fast build rule for target.
+aruco_tracker/fast:
+	$(MAKE) -f CMakeFiles/aruco_tracker.dir/build.make CMakeFiles/aruco_tracker.dir/build
+.PHONY : aruco_tracker/fast
+
+#=============================================================================
 # Target rules for targets named clean_test_results
 
 # Build rule for target.
@@ -200,6 +213,58 @@ fyp_node: cmake_check_build_system
 fyp_node/fast:
 	$(MAKE) -f CMakeFiles/fyp_node.dir/build.make CMakeFiles/fyp_node.dir/build
 .PHONY : fyp_node/fast
+
+#=============================================================================
+# Target rules for targets named geometry_msgs_generate_messages_cpp
+
+# Build rule for target.
+geometry_msgs_generate_messages_cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 geometry_msgs_generate_messages_cpp
+.PHONY : geometry_msgs_generate_messages_cpp
+
+# fast build rule for target.
+geometry_msgs_generate_messages_cpp/fast:
+	$(MAKE) -f CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build.make CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build
+.PHONY : geometry_msgs_generate_messages_cpp/fast
+
+#=============================================================================
+# Target rules for targets named geometry_msgs_generate_messages_lisp
+
+# Build rule for target.
+geometry_msgs_generate_messages_lisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 geometry_msgs_generate_messages_lisp
+.PHONY : geometry_msgs_generate_messages_lisp
+
+# fast build rule for target.
+geometry_msgs_generate_messages_lisp/fast:
+	$(MAKE) -f CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build.make CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build
+.PHONY : geometry_msgs_generate_messages_lisp/fast
+
+#=============================================================================
+# Target rules for targets named geometry_msgs_generate_messages_py
+
+# Build rule for target.
+geometry_msgs_generate_messages_py: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 geometry_msgs_generate_messages_py
+.PHONY : geometry_msgs_generate_messages_py
+
+# fast build rule for target.
+geometry_msgs_generate_messages_py/fast:
+	$(MAKE) -f CMakeFiles/geometry_msgs_generate_messages_py.dir/build.make CMakeFiles/geometry_msgs_generate_messages_py.dir/build
+.PHONY : geometry_msgs_generate_messages_py/fast
+
+#=============================================================================
+# Target rules for targets named position_visualizer
+
+# Build rule for target.
+position_visualizer: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 position_visualizer
+.PHONY : position_visualizer
+
+# fast build rule for target.
+position_visualizer/fast:
+	$(MAKE) -f CMakeFiles/position_visualizer.dir/build.make CMakeFiles/position_visualizer.dir/build
+.PHONY : position_visualizer/fast
 
 #=============================================================================
 # Target rules for targets named roscpp_generate_messages_cpp
@@ -293,6 +358,45 @@ run_tests/fast:
 .PHONY : run_tests/fast
 
 #=============================================================================
+# Target rules for targets named sensor_msgs_generate_messages_cpp
+
+# Build rule for target.
+sensor_msgs_generate_messages_cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 sensor_msgs_generate_messages_cpp
+.PHONY : sensor_msgs_generate_messages_cpp
+
+# fast build rule for target.
+sensor_msgs_generate_messages_cpp/fast:
+	$(MAKE) -f CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build.make CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build
+.PHONY : sensor_msgs_generate_messages_cpp/fast
+
+#=============================================================================
+# Target rules for targets named sensor_msgs_generate_messages_lisp
+
+# Build rule for target.
+sensor_msgs_generate_messages_lisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 sensor_msgs_generate_messages_lisp
+.PHONY : sensor_msgs_generate_messages_lisp
+
+# fast build rule for target.
+sensor_msgs_generate_messages_lisp/fast:
+	$(MAKE) -f CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build.make CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build
+.PHONY : sensor_msgs_generate_messages_lisp/fast
+
+#=============================================================================
+# Target rules for targets named sensor_msgs_generate_messages_py
+
+# Build rule for target.
+sensor_msgs_generate_messages_py: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 sensor_msgs_generate_messages_py
+.PHONY : sensor_msgs_generate_messages_py
+
+# fast build rule for target.
+sensor_msgs_generate_messages_py/fast:
+	$(MAKE) -f CMakeFiles/sensor_msgs_generate_messages_py.dir/build.make CMakeFiles/sensor_msgs_generate_messages_py.dir/build
+.PHONY : sensor_msgs_generate_messages_py/fast
+
+#=============================================================================
 # Target rules for targets named std_msgs_generate_messages_cpp
 
 # Build rule for target.
@@ -370,6 +474,30 @@ gtest_main/fast:
 	$(MAKE) -f gtest/CMakeFiles/gtest_main.dir/build.make gtest/CMakeFiles/gtest_main.dir/build
 .PHONY : gtest_main/fast
 
+src/aruco_tracker.o: src/aruco_tracker.cpp.o
+.PHONY : src/aruco_tracker.o
+
+# target to build an object file
+src/aruco_tracker.cpp.o:
+	$(MAKE) -f CMakeFiles/aruco_tracker.dir/build.make CMakeFiles/aruco_tracker.dir/src/aruco_tracker.cpp.o
+.PHONY : src/aruco_tracker.cpp.o
+
+src/aruco_tracker.i: src/aruco_tracker.cpp.i
+.PHONY : src/aruco_tracker.i
+
+# target to preprocess a source file
+src/aruco_tracker.cpp.i:
+	$(MAKE) -f CMakeFiles/aruco_tracker.dir/build.make CMakeFiles/aruco_tracker.dir/src/aruco_tracker.cpp.i
+.PHONY : src/aruco_tracker.cpp.i
+
+src/aruco_tracker.s: src/aruco_tracker.cpp.s
+.PHONY : src/aruco_tracker.s
+
+# target to generate assembly for a file
+src/aruco_tracker.cpp.s:
+	$(MAKE) -f CMakeFiles/aruco_tracker.dir/build.make CMakeFiles/aruco_tracker.dir/src/aruco_tracker.cpp.s
+.PHONY : src/aruco_tracker.cpp.s
+
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
@@ -394,21 +522,50 @@ src/main.cpp.s:
 	$(MAKE) -f CMakeFiles/fyp_node.dir/build.make CMakeFiles/fyp_node.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/visualizer.o: src/visualizer.cpp.o
+.PHONY : src/visualizer.o
+
+# target to build an object file
+src/visualizer.cpp.o:
+	$(MAKE) -f CMakeFiles/position_visualizer.dir/build.make CMakeFiles/position_visualizer.dir/src/visualizer.cpp.o
+.PHONY : src/visualizer.cpp.o
+
+src/visualizer.i: src/visualizer.cpp.i
+.PHONY : src/visualizer.i
+
+# target to preprocess a source file
+src/visualizer.cpp.i:
+	$(MAKE) -f CMakeFiles/position_visualizer.dir/build.make CMakeFiles/position_visualizer.dir/src/visualizer.cpp.i
+.PHONY : src/visualizer.cpp.i
+
+src/visualizer.s: src/visualizer.cpp.s
+.PHONY : src/visualizer.s
+
+# target to generate assembly for a file
+src/visualizer.cpp.s:
+	$(MAKE) -f CMakeFiles/position_visualizer.dir/build.make CMakeFiles/position_visualizer.dir/src/visualizer.cpp.s
+.PHONY : src/visualizer.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
+	@echo "... aruco_tracker"
 	@echo "... clean_test_results"
 	@echo "... download_extra_data"
 	@echo "... doxygen"
 	@echo "... edit_cache"
 	@echo "... fyp_node"
+	@echo "... geometry_msgs_generate_messages_cpp"
+	@echo "... geometry_msgs_generate_messages_lisp"
+	@echo "... geometry_msgs_generate_messages_py"
 	@echo "... install"
 	@echo "... install/local"
 	@echo "... install/strip"
 	@echo "... list_install_components"
+	@echo "... position_visualizer"
 	@echo "... rebuild_cache"
 	@echo "... roscpp_generate_messages_cpp"
 	@echo "... roscpp_generate_messages_lisp"
@@ -417,6 +574,9 @@ help:
 	@echo "... rosgraph_msgs_generate_messages_lisp"
 	@echo "... rosgraph_msgs_generate_messages_py"
 	@echo "... run_tests"
+	@echo "... sensor_msgs_generate_messages_cpp"
+	@echo "... sensor_msgs_generate_messages_lisp"
+	@echo "... sensor_msgs_generate_messages_py"
 	@echo "... std_msgs_generate_messages_cpp"
 	@echo "... std_msgs_generate_messages_lisp"
 	@echo "... std_msgs_generate_messages_py"
@@ -424,9 +584,15 @@ help:
 	@echo "... tests"
 	@echo "... gtest"
 	@echo "... gtest_main"
+	@echo "... src/aruco_tracker.o"
+	@echo "... src/aruco_tracker.i"
+	@echo "... src/aruco_tracker.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/visualizer.o"
+	@echo "... src/visualizer.i"
+	@echo "... src/visualizer.s"
 .PHONY : help
 
 

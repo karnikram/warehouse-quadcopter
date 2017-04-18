@@ -5,13 +5,73 @@
       <Option title="fyp" />
       <Option makefile_is_custom="1" />
       <Option compiler="gcc" />
-      <Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\..\;CMake Files\..\..\..\..\..\opt\;CMake Files\..\..\..\..\..\opt\ros\;CMake Files\..\..\..\..\..\opt\ros\indigo\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\catkin\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\catkin\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\catkin\cmake\platform\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\catkin\cmake\test\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\catkin\cmake\tools\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\catkin\cmake\..\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\catkin\cmake\templates\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\catkin\cmake\em\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\roscpp\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\roscpp\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\cpp_common\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\cpp_common\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\message_runtime\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\message_runtime\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\roscpp_serialization\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\roscpp_serialization\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\roscpp_traits\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\roscpp_traits\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\rostime\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\rostime\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\rosconsole\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\rosconsole\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\rosgraph_msgs\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\rosgraph_msgs\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\std_msgs\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\std_msgs\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\xmlrpcpp\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\xmlrpcpp\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\cmake_modules\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\cmake_modules\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\cmake_modules\cmake\Modules\;CMake Files\..\..\..\..\..\usr\;CMake Files\..\..\..\..\..\usr\share\;CMake Files\..\..\..\..\..\usr\share\OpenCV\;CMake Files\..\..\..\..\..\usr\src\;CMake Files\..\..\..\..\..\usr\src\gtest\;CMake Files\..\..\..\..\..\usr\src\gtest\cmake\;CMake Files\build\;CMake Files\build\catkin\;CMake Files\build\catkin\catkin_generated\;CMake Files\build\catkin\catkin_generated\version\;CMake Files\build\catkin_generated\;CMake Files\build\catkin_generated\installspace\;" />
+      <Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\..\;CMake Files\..\..\..\..\..\opt\;CMake Files\..\..\..\..\..\opt\ros\;CMake Files\..\..\..\..\..\opt\ros\indigo\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\catkin\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\catkin\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\catkin\cmake\platform\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\catkin\cmake\test\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\catkin\cmake\tools\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\catkin\cmake\..\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\catkin\cmake\templates\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\catkin\cmake\em\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\roscpp\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\roscpp\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\cpp_common\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\cpp_common\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\message_runtime\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\message_runtime\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\roscpp_serialization\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\roscpp_serialization\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\roscpp_traits\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\roscpp_traits\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\rostime\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\rostime\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\rosconsole\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\rosconsole\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\rosgraph_msgs\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\rosgraph_msgs\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\std_msgs\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\std_msgs\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\xmlrpcpp\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\xmlrpcpp\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\cv_bridge\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\cv_bridge\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\sensor_msgs\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\sensor_msgs\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\geometry_msgs\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\geometry_msgs\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\cmake_modules\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\cmake_modules\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\cmake_modules\cmake\Modules\;CMake Files\..\..\..\..\..\usr\;CMake Files\..\..\..\..\..\usr\share\;CMake Files\..\..\..\..\..\usr\share\OpenCV\;CMake Files\..\..\..\..\..\usr\local\;CMake Files\..\..\..\..\..\usr\local\lib\;CMake Files\..\..\..\..\..\usr\local\lib\cmake\;CMake Files\..\..\..\..\..\usr\src\;CMake Files\..\..\..\..\..\usr\src\gtest\;CMake Files\..\..\..\..\..\usr\src\gtest\cmake\;CMake Files\build\;CMake Files\build\catkin\;CMake Files\build\catkin\catkin_generated\;CMake Files\build\catkin\catkin_generated\version\;CMake Files\build\catkin_generated\;CMake Files\build\catkin_generated\installspace\;" />
       <Build>
       <Target title="all">
          <Option working_dir="/home/karnix/catkin_ws/src/fyp/build" />
          <Option type="4" />
          <MakeCommands>
             <Build command="/usr/bin/make -f &quot;/home/karnix/catkin_ws/src/fyp/build/Makefile&quot;  VERBOSE=1 all" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/karnix/catkin_ws/src/fyp/build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/karnix/catkin_ws/src/fyp/build/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/karnix/catkin_ws/src/fyp/build/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="aruco_tracker">
+         <Option output="/home/karnix/catkin_ws/src/fyp/build/devel/lib/fyp/aruco_tracker" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/karnix/catkin_ws/src/fyp/build/devel/lib/fyp" />
+         <Option object_output="./" />
+         <Option type="1" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-DROS_PACKAGE_NAME=&quot;fyp&quot;" />
+            <Add option="-DROSCONSOLE_BACKEND_LOG4CXX" />
+            <Add directory="/flyt/flytos/flytcore/include" />
+            <Add directory="/home/karnix/catkin_ws/devel/include" />
+            <Add directory="/opt/ros/indigo/include" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/4.8" />
+            <Add directory="/usr/include/c++/4.8/backward" />
+            <Add directory="/usr/include/eigen3" />
+            <Add directory="/usr/include/opencv" />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/include/x86_64-linux-gnu/c++/4.8" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/karnix/catkin_ws/src/fyp/build/Makefile&quot;  VERBOSE=1 aruco_tracker" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/karnix/catkin_ws/src/fyp/build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/karnix/catkin_ws/src/fyp/build/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/karnix/catkin_ws/src/fyp/build/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="aruco_tracker/fast">
+         <Option output="/home/karnix/catkin_ws/src/fyp/build/devel/lib/fyp/aruco_tracker" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/karnix/catkin_ws/src/fyp/build/devel/lib/fyp" />
+         <Option object_output="./" />
+         <Option type="1" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-DROS_PACKAGE_NAME=&quot;fyp&quot;" />
+            <Add option="-DROSCONSOLE_BACKEND_LOG4CXX" />
+            <Add directory="/flyt/flytos/flytcore/include" />
+            <Add directory="/home/karnix/catkin_ws/devel/include" />
+            <Add directory="/opt/ros/indigo/include" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/4.8" />
+            <Add directory="/usr/include/c++/4.8/backward" />
+            <Add directory="/usr/include/eigen3" />
+            <Add directory="/usr/include/opencv" />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/include/x86_64-linux-gnu/c++/4.8" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/karnix/catkin_ws/src/fyp/build/Makefile&quot;  VERBOSE=1 aruco_tracker/fast" />
             <CompileFile command="/usr/bin/make -f &quot;/home/karnix/catkin_ws/src/fyp/build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
             <Clean command="/usr/bin/make -f &quot;/home/karnix/catkin_ws/src/fyp/build/Makefile&quot;  VERBOSE=1 clean" />
             <DistClean command="/usr/bin/make -f &quot;/home/karnix/catkin_ws/src/fyp/build/Makefile&quot;  VERBOSE=1 clean" />
@@ -107,6 +167,36 @@
             <DistClean command="/usr/bin/make -f &quot;/home/karnix/catkin_ws/src/fyp/build/Makefile&quot;  VERBOSE=1 clean" />
          </MakeCommands>
       </Target>
+      <Target title="geometry_msgs_generate_messages_cpp">
+         <Option working_dir="/home/karnix/catkin_ws/src/fyp/build" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/karnix/catkin_ws/src/fyp/build/Makefile&quot;  VERBOSE=1 geometry_msgs_generate_messages_cpp" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/karnix/catkin_ws/src/fyp/build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/karnix/catkin_ws/src/fyp/build/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/karnix/catkin_ws/src/fyp/build/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="geometry_msgs_generate_messages_lisp">
+         <Option working_dir="/home/karnix/catkin_ws/src/fyp/build" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/karnix/catkin_ws/src/fyp/build/Makefile&quot;  VERBOSE=1 geometry_msgs_generate_messages_lisp" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/karnix/catkin_ws/src/fyp/build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/karnix/catkin_ws/src/fyp/build/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/karnix/catkin_ws/src/fyp/build/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="geometry_msgs_generate_messages_py">
+         <Option working_dir="/home/karnix/catkin_ws/src/fyp/build" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/karnix/catkin_ws/src/fyp/build/Makefile&quot;  VERBOSE=1 geometry_msgs_generate_messages_py" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/karnix/catkin_ws/src/fyp/build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/karnix/catkin_ws/src/fyp/build/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/karnix/catkin_ws/src/fyp/build/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
       <Target title="install">
          <Option working_dir="/home/karnix/catkin_ws/src/fyp/build" />
          <Option type="4" />
@@ -142,6 +232,66 @@
          <Option type="4" />
          <MakeCommands>
             <Build command="/usr/bin/make -f &quot;/home/karnix/catkin_ws/src/fyp/build/Makefile&quot;  VERBOSE=1 list_install_components" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/karnix/catkin_ws/src/fyp/build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/karnix/catkin_ws/src/fyp/build/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/karnix/catkin_ws/src/fyp/build/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="position_visualizer">
+         <Option output="/home/karnix/catkin_ws/src/fyp/build/devel/lib/fyp/position_visualizer" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/karnix/catkin_ws/src/fyp/build/devel/lib/fyp" />
+         <Option object_output="./" />
+         <Option type="1" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-DROS_PACKAGE_NAME=&quot;fyp&quot;" />
+            <Add option="-DROSCONSOLE_BACKEND_LOG4CXX" />
+            <Add directory="/flyt/flytos/flytcore/include" />
+            <Add directory="/home/karnix/catkin_ws/devel/include" />
+            <Add directory="/opt/ros/indigo/include" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/4.8" />
+            <Add directory="/usr/include/c++/4.8/backward" />
+            <Add directory="/usr/include/eigen3" />
+            <Add directory="/usr/include/opencv" />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/include/x86_64-linux-gnu/c++/4.8" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/karnix/catkin_ws/src/fyp/build/Makefile&quot;  VERBOSE=1 position_visualizer" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/karnix/catkin_ws/src/fyp/build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/karnix/catkin_ws/src/fyp/build/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/karnix/catkin_ws/src/fyp/build/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="position_visualizer/fast">
+         <Option output="/home/karnix/catkin_ws/src/fyp/build/devel/lib/fyp/position_visualizer" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/karnix/catkin_ws/src/fyp/build/devel/lib/fyp" />
+         <Option object_output="./" />
+         <Option type="1" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-DROS_PACKAGE_NAME=&quot;fyp&quot;" />
+            <Add option="-DROSCONSOLE_BACKEND_LOG4CXX" />
+            <Add directory="/flyt/flytos/flytcore/include" />
+            <Add directory="/home/karnix/catkin_ws/devel/include" />
+            <Add directory="/opt/ros/indigo/include" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/4.8" />
+            <Add directory="/usr/include/c++/4.8/backward" />
+            <Add directory="/usr/include/eigen3" />
+            <Add directory="/usr/include/opencv" />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/include/x86_64-linux-gnu/c++/4.8" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/karnix/catkin_ws/src/fyp/build/Makefile&quot;  VERBOSE=1 position_visualizer/fast" />
             <CompileFile command="/usr/bin/make -f &quot;/home/karnix/catkin_ws/src/fyp/build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
             <Clean command="/usr/bin/make -f &quot;/home/karnix/catkin_ws/src/fyp/build/Makefile&quot;  VERBOSE=1 clean" />
             <DistClean command="/usr/bin/make -f &quot;/home/karnix/catkin_ws/src/fyp/build/Makefile&quot;  VERBOSE=1 clean" />
@@ -222,6 +372,36 @@
          <Option type="4" />
          <MakeCommands>
             <Build command="/usr/bin/make -f &quot;/home/karnix/catkin_ws/src/fyp/build/Makefile&quot;  VERBOSE=1 run_tests" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/karnix/catkin_ws/src/fyp/build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/karnix/catkin_ws/src/fyp/build/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/karnix/catkin_ws/src/fyp/build/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="sensor_msgs_generate_messages_cpp">
+         <Option working_dir="/home/karnix/catkin_ws/src/fyp/build" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/karnix/catkin_ws/src/fyp/build/Makefile&quot;  VERBOSE=1 sensor_msgs_generate_messages_cpp" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/karnix/catkin_ws/src/fyp/build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/karnix/catkin_ws/src/fyp/build/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/karnix/catkin_ws/src/fyp/build/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="sensor_msgs_generate_messages_lisp">
+         <Option working_dir="/home/karnix/catkin_ws/src/fyp/build" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/karnix/catkin_ws/src/fyp/build/Makefile&quot;  VERBOSE=1 sensor_msgs_generate_messages_lisp" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/karnix/catkin_ws/src/fyp/build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/karnix/catkin_ws/src/fyp/build/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/karnix/catkin_ws/src/fyp/build/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="sensor_msgs_generate_messages_py">
+         <Option working_dir="/home/karnix/catkin_ws/src/fyp/build" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/karnix/catkin_ws/src/fyp/build/Makefile&quot;  VERBOSE=1 sensor_msgs_generate_messages_py" />
             <CompileFile command="/usr/bin/make -f &quot;/home/karnix/catkin_ws/src/fyp/build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
             <Clean command="/usr/bin/make -f &quot;/home/karnix/catkin_ws/src/fyp/build/Makefile&quot;  VERBOSE=1 clean" />
             <DistClean command="/usr/bin/make -f &quot;/home/karnix/catkin_ws/src/fyp/build/Makefile&quot;  VERBOSE=1 clean" />
@@ -394,7 +574,11 @@
          </MakeCommands>
       </Target>
       </Build>
+      <Unit filename="/home/karnix/catkin_ws/src/fyp/src/aruco_tracker.cpp">
+      </Unit>
       <Unit filename="/home/karnix/catkin_ws/src/fyp/src/main.cpp">
+      </Unit>
+      <Unit filename="/home/karnix/catkin_ws/src/fyp/src/visualizer.cpp">
       </Unit>
       <Unit filename="/usr/src/gtest/src/gtest-all.cc">
       </Unit>
@@ -664,6 +848,30 @@
       <Unit filename="/home/karnix/catkin_ws/src/fyp/../../../../../opt/ros/indigo/share/xmlrpcpp/cmake/xmlrpcppConfig.cmake">
           <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\xmlrpcpp\cmake\" />
       </Unit>
+      <Unit filename="/home/karnix/catkin_ws/src/fyp/../../../../../opt/ros/indigo/share/cv_bridge/cmake/cv_bridgeConfig-version.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\cv_bridge\cmake\" />
+      </Unit>
+      <Unit filename="/home/karnix/catkin_ws/src/fyp/../../../../../opt/ros/indigo/share/cv_bridge/cmake/cv_bridgeConfig.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\cv_bridge\cmake\" />
+      </Unit>
+      <Unit filename="/home/karnix/catkin_ws/src/fyp/../../../../../opt/ros/indigo/share/sensor_msgs/cmake/sensor_msgsConfig-version.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\sensor_msgs\cmake\" />
+      </Unit>
+      <Unit filename="/home/karnix/catkin_ws/src/fyp/../../../../../opt/ros/indigo/share/sensor_msgs/cmake/sensor_msgsConfig.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\sensor_msgs\cmake\" />
+      </Unit>
+      <Unit filename="/home/karnix/catkin_ws/src/fyp/../../../../../opt/ros/indigo/share/sensor_msgs/cmake/sensor_msgs-msg-extras.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\sensor_msgs\cmake\" />
+      </Unit>
+      <Unit filename="/home/karnix/catkin_ws/src/fyp/../../../../../opt/ros/indigo/share/geometry_msgs/cmake/geometry_msgsConfig-version.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\geometry_msgs\cmake\" />
+      </Unit>
+      <Unit filename="/home/karnix/catkin_ws/src/fyp/../../../../../opt/ros/indigo/share/geometry_msgs/cmake/geometry_msgsConfig.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\geometry_msgs\cmake\" />
+      </Unit>
+      <Unit filename="/home/karnix/catkin_ws/src/fyp/../../../../../opt/ros/indigo/share/geometry_msgs/cmake/geometry_msgs-msg-extras.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\geometry_msgs\cmake\" />
+      </Unit>
       <Unit filename="/home/karnix/catkin_ws/src/fyp/../../../../../opt/ros/indigo/share/cmake_modules/cmake/cmake_modulesConfig-version.cmake">
           <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\cmake_modules\cmake\" />
       </Unit>
@@ -687,6 +895,9 @@
       </Unit>
       <Unit filename="/home/karnix/catkin_ws/src/fyp/../../../../../usr/share/OpenCV/OpenCVModules-release.cmake">
           <Option virtualFolder="CMake Files\..\..\..\..\..\usr\share\OpenCV\" />
+      </Unit>
+      <Unit filename="/home/karnix/catkin_ws/src/fyp/../../../../../usr/local/lib/cmake/Findaruco.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\usr\local\lib\cmake\" />
       </Unit>
       <Unit filename="/home/karnix/catkin_ws/src/fyp/../../../../../usr/src/gtest/CMakeLists.txt">
           <Option virtualFolder="CMake Files\..\..\..\..\..\usr\src\gtest\" />
